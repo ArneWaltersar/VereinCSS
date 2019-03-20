@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Fxml_Controller">
+   <children>
+      <Pane id="header-pane" prefHeight="56.0" prefWidth="607.0" />
+      <TabPane layoutY="39.0" prefHeight="361.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="160.0">
+        <tabs>
+          <Tab text="Tabelle">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tv_verein" prefHeight="325.0" prefWidth="575.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="5.0">
+                          <columns>
+                            <TableColumn fx:id="tc_platz" editable="false" prefWidth="45.0" sortable="false" text="Platz" />
+                            <TableColumn fx:id="tc_name" editable="false" prefWidth="140.0" sortable="false" text="Verein" />
+                              <TableColumn fx:id="tc_spiele" editable="false" prefWidth="45.0" sortable="false" text="SP" />
+                              <TableColumn fx:id="tc_tore" editable="false" prefWidth="45.0" sortable="false" text="T" />
+                              <TableColumn fx:id="tc_ggntore" editable="false" prefWidth="45.0" sortable="false" text="GT" />
+                              <TableColumn fx:id="tc_siege" editable="false" prefWidth="45.0" sortable="false" text="S" />
+                              <TableColumn fx:id="tc_unentschieden" editable="false" prefWidth="45.0" sortable="false" text="U" />
+                              <TableColumn fx:id="tc_niederlagen" prefWidth="45.0" text="N" />
+                              <TableColumn fx:id="tc_tordiff" editable="false" prefWidth="45.0" sortable="false" text="TD" />
+                              <TableColumn fx:id="tc_punkte" editable="false" prefWidth="45.0" sortable="false" text="Pkt" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Spiele">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView id="spielecss" fx:id="lv_spiele" prefHeight="314.0" prefWidth="345.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="5.0" />
+                        <Label layoutX="425.0" layoutY="112.0" prefHeight="50.0" prefWidth="140.0" text="Matches Generieren">
+                           <font>
+                              <Font name="Microsoft New Tai Lue" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="425.0" layoutY="5.0" prefHeight="50.0" prefWidth="140.0" text="Tabelle aktualisieren">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_spielliste" layoutX="425.0" layoutY="55.0" mnemonicParsing="false" onAction="#btn_spielliste" prefHeight="40.0" prefWidth="95.0" text="Refresh" />
+                        <Button fx:id="btn_paarungen" layoutX="425.0" layoutY="162.0" mnemonicParsing="false" onAction="#btn_paarungen" prefHeight="40.0" prefWidth="95.0" text="Versus" />
+                        <Label layoutX="426.0" layoutY="207.0" prefHeight="50.0" prefWidth="160.0" text="Spielergebnis eintragen">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_ergebnisse" layoutX="425.0" layoutY="257.0" mnemonicParsing="false" onAction="#btn_ergebnisse" prefHeight="40.0" prefWidth="95.0" text="Edit" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Einstellungen">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="58.0" layoutY="14.0" prefHeight="50.0" prefWidth="140.0" text="Verein hinzufügen">
+                           <font>
+                              <Font name="Microsoft New Tai Lue" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_vereine" layoutX="178.0" layoutY="112.0" mnemonicParsing="false" onAction="#btn_vereine" prefHeight="39.0" prefWidth="70.0" text="Add" />
+                        <TextField fx:id="tf_verein" layoutX="58.0" layoutY="64.0" onAction="#tf_verein" prefHeight="37.0" prefWidth="190.0" promptText="Verein" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="23.0" layoutY="4.0" prefHeight="35.0" prefWidth="270.0" text="Fußball-Bundesliga" textFill="WHITE">
+         <font>
+            <Font name="Microsoft New Tai Lue" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_close" layoutX="523.0" layoutY="8.0" mnemonicParsing="false" onAction="#btn_close" text="Beenden" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="4.0">
+         <font>
+            <Font name="Microsoft New Tai Lue" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
